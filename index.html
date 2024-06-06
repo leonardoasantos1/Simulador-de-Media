@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+    <link rel="stylesheet" href="./assets/CSS/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <main id="container">
+        <form id="id-form">
+            <h1 class="title">Calculadora de Média</h1>
+            <div id="inputs-grades">
+                <label for="">AC1: </label>
+                <input type="number" placeholder="Insira nota da AC1" id="note-ac1" step="0.1">
+                <label for="">AC2: </label>
+                <input type="number" placeholder="Insira nota da AC2" id="note-ac2" step="0.1">
+                <label for="">PEX: </label>
+                <input type="number" placeholder="Insira nota do PEX" id="note-pex" step="0.1">
+                <label for="">AR: </label>
+                <input type="number" placeholder="Insira nota da AR" id="note-ar" step="0.1">
+            </div>
+            <button id="button-clean" onclick="limpar()">Limpar</button>
+            <button type="button" onclick="calcular()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="button-calculate">Calcular</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" title="Modal Variants" header-bg-variant="dark" body-bg-variant="dark"> 
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Situação do aluno:</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="result"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <button class="btn btn-" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" id="information"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nO2ZT0oDMRjFcxPzeSFRtN6nxY0guGg+j9HeoP/v0i7NN5ZZNZJSEdIiJMVkwrwfvM2s3st7gYEoBQAAnYbG9lEbWRJLQywukxpiWdwa+3CdebbvGU27S9Js35JPvrR5Ounmw95HB9Asq9LG6Vfz+Abybt79PSORlACuS1IIwD1rYLRp3e7rcNRo3dYV4Hm6dyGDyb6eAC+b9iyA/1ZNgMHkvIGnmhogfwfWrds2h6OGtd0B+gcpBOCeNRCCALGggQBMKBZMKAATigUTCsCEYqG+/wsRAkjPG9AsUto0naRZPlMaWJQ2Tj8ydhYdwD8udKaBsb1TKfjHhdLmycirugb/uOArzP7EZOws+eQBAEDl4hu7A6JyqcgwgQAAAABJRU5ErkJggg==" width="25"> Informações</button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Tutorial de Uso da Calculadora de Média:
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                    <p><strong>Inserindo Notas:</strong> Preencha os campos para AC1, AC2, PEX e AR com suas notas de 0 a 10.
+                    </p>
+                    <p><strong>Exemplo:</strong><img src="./assets/imagens/exemplo-input.png" alt=""></p>
+                    <p><strong>Calculando a Média:</strong> Clique em "Calcular". O resultado aparecerá em uma janela modal.</p><img src="./assets/imagens/botao-calcular.png" alt="">
+                    <p><strong>Resultado:
+                    </strong></p>
+                    <p><strong>Aprovado:</strong> Média maior ou igual a 7.
+                    </p>
+                    <p><strong>Exame:</strong> Média entre 3 e 6.9</p>
+                    <p><strong>Reprovado:</strong> Média menor 3</p>
+                    <p><strong>Limpar Campos:</strong> Clique em "Limpar" para resetar os campos.</p>
+                    <p><strong>Pesos das Notas:</strong> AC1 (10%), AC2 (20%), PEX (20%), AR (50%).
+                    </p>
+                    <p><strong>Mensagens de Erro:</strong> Certifique-se de preencher todos os campos corretamente.</p>
+                    </div>
+                </div>
+        </form>
+    </main>       
+    <script src="./assets/JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
